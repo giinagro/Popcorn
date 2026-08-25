@@ -723,3 +723,820 @@ h1, h2, h3, .retro-title {
   transform: scale(1.08);
   color: #c82323;
 }
+
+:root {
+  --wine-red: #721121;
+  --dark-wine: #4a0010;
+  --gold-accent: #e5a93c;
+  --bright-gold: #f4c430;
+  --bg-neutral: #faf8f5;
+  --card-cream: #ffffff;
+  --text-dark: #222222;
+  --text-muted: #666666;
+  --border-gold: 2px solid #e5a93c;
+  --border-wine: 2px solid #721121;
+  --shadow-retro: 4px 4px 0px #4a0010;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--text-dark);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #f4e8c1;
+  background-image: repeating-conic-gradient(
+    from 0deg,
+    #f4e8c1 0deg 12deg,
+    #ebd8a3 12deg 24deg
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .retro-title {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--wine-red);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 950px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 0 20px 40px;
+}
+
+/* Navbar Estilo Cinema Vintage */
+.navbar {
+  background-color: var(--wine-red);
+  border-bottom: 4px solid var(--gold-accent);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--gold-accent);
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0px var(--dark-wine);
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--gold-accent);
+  background-color: var(--dark-wine);
+}
+
+/* Botões */
+.btn-retro {
+  background-color: var(--wine-red);
+  color: #ffffff;
+  border: 2px solid var(--dark-wine);
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 3px 0px var(--dark-wine);
+  transition: all 0.15s ease;
+}
+
+.btn-retro:hover {
+  background-color: var(--dark-wine);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0px var(--dark-wine);
+}
+
+.btn-retro-gold {
+  background-color: var(--gold-accent);
+  color: var(--dark-wine);
+  border: 2px solid var(--gold-accent);
+  font-weight: 700;
+}
+
+.btn-retro-gold:hover {
+  background-color: var(--bright-gold);
+  color: #000;
+}
+
+.btn-retro-secondary {
+  background-color: #e0e0e0;
+  color: var(--text-dark);
+  border: 2px solid #ccc;
+  box-shadow: none;
+}
+
+/* Inputs Legíveis */
+.input-retro, .select-retro, .textarea-retro {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  margin-bottom: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.input-retro:focus, .select-retro:focus, .textarea-retro:focus {
+  border-color: var(--wine-red);
+}
+
+/* Cards de Post */
+.post-card {
+  background-color: var(--card-cream);
+  border: 1px solid #e2dcd0;
+  border-top: 4px solid var(--wine-red);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  padding: 22px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.post-author {
+  font-weight: 600;
+  color: var(--wine-red);
+}
+
+.post-body {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 650px) {
+  .post-body {
+    flex-direction: column;
+  }
+}
+
+.post-poster {
+  width: 130px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.post-info {
+  flex: 1;
+}
+
+.movie-title {
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--wine-red);
+}
+
+.movie-year {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.star-rating {
+  color: var(--gold-accent);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.post-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.post-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 15px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+.like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--wine-red);
+  font-family: inherit;
+}
+
+/* Cabine de Ingressos (Página de Login) */
+.ticket-booth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  padding: 20px 0;
+}
+
+.ticket-booth {
+  background-color: var(--wine-red);
+  border: 4px solid var(--gold-accent);
+  border-radius: 16px 16px 8px 8px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 10px 30px rgba(74, 0, 16, 0.3);
+  overflow: hidden;
+}
+
+.ticket-marquee {
+  background-color: var(--dark-wine);
+  border-bottom: 3px solid var(--gold-accent);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.ticket-marquee-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--gold-accent);
+  letter-spacing: 4px;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.ticket-marquee-subtitle {
+  color: #ffffff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.ticket-window {
+  background-color: var(--card-cream);
+  padding: 30px;
+  margin: 15px;
+  border-radius: 8px;
+  border: 2px dashed var(--gold-accent);
+}
+
+.ticket-stub-btn {
+  background: var(--gold-accent);
+  color: var(--dark-wine);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--dark-wine);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ticket-stub-btn:hover {
+  background-color: var(--bright-gold);
+  transform: scale(1.02);
+}
+
+/* Modais e Comentários */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border-top: 6px solid var(--wine-red);
+}
+
+.profile-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.comments-container {
+  margin-top: 15px;
+  background-color: #fcfbfa;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #eaeaea;
+}
+
+.comment-item {
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  font-size: 0.9rem;
+}
+
+.comment-user {
+  font-weight: 600;
+  color: var(--wine-red);
+}
+
+/* Estilos da Foto de Perfil */
+.profile-card {
+  padding: 30px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+@media (max-width: 600px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--gold-accent);
+  box-shadow: 0 4px 12px rgba(74, 0, 16, 0.25);
+}
+
+.profile-details {
+  flex: 1;
+}
+
+/* Avatar menor no cabeçalho estilo Instagram + botão de edição sobreposto */
+.profile-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: fit-content;
+}
+
+.profile-avatar-sm {
+  width: 90px;
+  height: 90px;
+}
+
+.avatar-edit-btn {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--gold-accent);
+  border: 2px solid #ffffff;
+  color: var(--wine-red);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease;
+}
+
+.avatar-edit-btn:hover {
+  transform: scale(1.1);
+  background-color: var(--bright-gold);
+}
+
+/* Linha de contadores (Indicações / Seguidores / Seguindo) */
+.profile-stats-row {
+  display: flex;
+  gap: 24px;
+  margin: 6px 0 4px;
+  font-size: 0.95rem;
+}
+
+.profile-stats-row > div:nth-child(2),
+.profile-stats-row > div:nth-child(3) {
+  cursor: pointer;
+}
+
+/* Popup de Seguidores / Seguindo */
+.follow-modal-content {
+  max-width: 380px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.follow-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.follow-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.follow-list {
+  overflow-y: auto;
+}
+
+.follow-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.follow-list-username {
+  flex: 1;
+  font-weight: 600;
+  color: var(--wine-red);
+  font-size: 0.9rem;
+}
+
+/* Estilos do Avatar no Menu */
+.nav-profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-accent);
+  background-color: var(--card-cream);
+  flex-shrink: 0;
+}
+
+/* Layout 3 Colunas para o Feed */
+.feed-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 250px;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 950px) {
+  .feed-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajuste da largura máxima para acomodar as 3 colunas */
+.main-content {
+  max-width: 1200px;
+}
+
+/* Estilos das Barras Laterais Vintage */
+.sidebar {
+  background-color: var(--card-cream);
+  border: 2px solid var(--gold-accent);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.sidebar-header {
+  background-color: var(--dark-wine);
+  color: var(--gold-accent);
+  padding: 12px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--gold-accent);
+}
+
+.sidebar-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: var(--gold-accent);
+  margin: 0;
+  text-align: center;
+}
+
+.sidebar-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.sidebar-content {
+  padding: 15px;
+  position: relative;
+}
+
+/* Cabeçalho das Barras Laterais */
+.sidebar-header {
+  background-color: var(--dark-wine);
+  color: var(--gold-accent);
+  padding: 12px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--gold-accent);
+}
+
+/* Efeito de Lâmpadas de Letreiro (Marquee Bulbs) */
+.marquee-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--bright-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--bright-gold);
+}
+
+.feed-banner-marquee {
+  background-color: var(--wine-red);
+  border: 2px solid var(--gold-accent);
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feed-title {
+  color: var(--gold-accent);
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 2px 2px 0px var(--dark-wine);
+}
+
+.marquee-bulbs {
+  display: flex;
+  gap: 6px;
+}
+
+.marquee-bulbs span {
+  width: 8px;
+  height: 8px;
+  background-color: var(--bright-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--bright-gold);
+}
+
+/* Cards de Amigos na Esquerda */
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.friend-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--wine-red);
+  background-color: var(--bg-neutral);
+  flex-shrink: 0;
+}
+
+.friend-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.friend-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--wine-red);
+}
+
+.friend-match {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.btn-follow {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid var(--wine-red);
+  color: var(--wine-red);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-follow:hover, .btn-follow.following {
+  background-color: var(--wine-red);
+  color: #fff;
+}
+
+/* Cards de Recomendação na Direita */
+.recommendation-card {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.rec-poster {
+  width: 60px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--gold-accent);
+}
+
+.rec-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rec-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: var(--wine-red);
+  margin: 0;
+  line-height: 1;
+}
+
+.rec-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin: 2px 0;
+}
+
+.rec-stars {
+  color: var(--gold-accent);
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.btn-rec-action {
+  padding: 2px 8px !important;
+  font-size: 0.7rem !important;
+  align-self: flex-start;
+}
+
+/* Carimbo Vintage */
+.cinema-stamp {
+  display: inline-block;
+  background-color: var(--dark-wine);
+  color: var(--gold-accent);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--gold-accent);
+  margin-bottom: 12px;
+}
+
+.empty-sidebar-box {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Container do Logo com Pacote de Pipoca */
+.navbar-brand-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.popcorn-logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.popcorn-logo-brand:hover {
+  transform: scale(1.04);
+}
+
+/* Ilustracao do Pacote de Pipoca */
+.popcorn-bag-icon {
+  width: 55px;
+  height: 65px;
+  filter: drop-shadow(-3px 4px 0px #1f0508);
+}
+
+/* Tipografia Retro 3D */
+.popcorn-text-3d {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.2rem;
+  letter-spacing: 4px;
+  color: #d32222;
+  text-transform: uppercase;
+  line-height: 1;
+  position: relative;
+  
+  /* Contorno claro na frente */
+  -webkit-text-stroke: 1.5px #fff8e7;
+  
+  /* Projecao de sombra 3D em bloco */
+  text-shadow:
+    -1px 1px 0 #1f0508,
+    -2px 2px 0 #1f0508,
+    -3px 3px 0 #1f0508,
+    -4px 4px 0 #1f0508,
+    -5px 5px 0 #1f0508,
+    -6px 6px 0 #1f0508,
+    -7px 7px 0 #1f0508,
+    -8px 8px 0 #1f0508,
+    -10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para os contadores do perfil */
+.profile-stats-row > div {
+  transition: transform 0.15s ease;
+  user-select: none;
+}
+
+.profile-stats-row > div:hover {
+  transform: scale(1.08);
+  color: #c82323;
+}

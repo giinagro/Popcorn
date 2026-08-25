@@ -1,11 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { PostContext } from '../context/PostContext';
 
 export const LeftSidebar = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, isFollowing, followUser, unfollowUser } = useContext(AuthContext);
   const { posts } = useContext(PostContext);
-  const [followed, setFollowed] = useState({});
 
   const defaultSilhouette = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23721121'><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/></svg>";
 
@@ -34,7 +33,11 @@ export const LeftSidebar = () => {
   const suggestedFriends = Object.values(otherUsersMap);
 
   const toggleFollow = (username) => {
-    setFollowed((prev) => ({ ...prev, [username]: !prev[username] }));
+    if (isFollowing(username)) {
+      unfollowUser(username);
+    } else {
+      followUser(username);
+    }
   };
 
   return (
@@ -66,10 +69,10 @@ export const LeftSidebar = () => {
                     : `Curte ${Array.from(friend.favoriteGenres)[0] || 'Cinema'}`}
                 </span>
                 <button
-                  className={`btn-follow ${followed[friend.username] ? 'following' : ''}`}
+                  className={`btn-follow ${isFollowing(friend.username) ? 'following' : ''}`}
                   onClick={() => toggleFollow(friend.username)}
                 >
-                  {followed[friend.username] ? '✓ Seguindo' : '+ Seguir'}
+                  {isFollowing(friend.username) ? '✓ Seguindo' : '+ Seguir'}
                 </button>
               </div>
             </div>
