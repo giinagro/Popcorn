@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { PostContext } from '../context/PostContext';
-import { FollowListModal } from './components/Followlistmodal';
+import { FollowlistModal } from './components/Followlistmodal';
 
 export const Profile = () => {
   const {
